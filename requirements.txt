@@ -1,0 +1,22 @@
+requirements
+vehicle entry -> create vehicle -> get slot -> assign vehicle -> generate ticket -> output ticket
+vehicle exit -> get ticket -> get entrytime -> calculate pricing using pricing rule -> payment service -> generate reciept -> free slot
+admin flow -> add slot -> add pricing rule
+
+core entities
+    vehicle - id, liscense, vehicle type(bike,car,truck)
+    Parkingslot - id,vehicle type , vehicle
+    ticket - id, vehicleid, slotid, entrytime, exittime, status(valid,invalid)
+    pricingrule - id, vehicletype, flat, hour
+    payment - id, ticketid, amount, paymenttype, status(created,pending,success,failed)
+    reciept - id, amount, paymentid, entrytime, exittime, paymentStatus
+
+controller
+    entryController
+        vehicle entry(liscense,vehicleType):ticketId
+        vehicle exit
+    exitController
+    admincontroller
+
+service
+    pricing service
